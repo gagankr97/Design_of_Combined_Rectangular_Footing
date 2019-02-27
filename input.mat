@@ -1,0 +1,94 @@
+%% Width1_of_Column_A in m
+# name: Width1_of_Column_A
+# type: scalar
+0.300
+
+%% Width2_of_Column_A in m
+# name: Width2_of_Column_A
+# type: scalar
+0.300
+
+%% Width1_of_Column_B in m
+# name: Width1_of_Column_B
+# type: scalar
+0.400
+
+%% Width2_of_Column_B in m
+# name: Width2_of_Column_B
+# type: scalar
+0.400
+
+%% Load_on_Column_A in KN 
+# name: Load_on_Column_A
+# type: scalar
+500
+
+%% Load_on_Column_B in KN
+# name: Load_on_Column_B
+# type: scalar
+700
+
+%% Assume the Self Weight of the Footing
+# name: Self_Weight
+# type: scalar
+0.1
+
+%% Center_to_Center_spacing_of_Column in m
+# name: Center_to_Center_spacing_of_Column
+# type: scalar
+3.4
+
+%% Fck in N/mm^2
+# name: Fck
+# type: scalar
+20
+
+%% Fy in N/mm^2
+# name: Fy
+# type: scalar
+415
+
+%% Soil_Pressure in N/m^2
+# name: Soil_Pressure
+# type: scalar
+150
+
+%% Clear_Cover in mm
+# name: Clear_Cover
+# type: scalar
+60
+
+%% dia in mm
+# name: dia
+# type: scalar
+16
+
+%% dia in mm
+# name: dia_12
+# type: scalar
+12
+
+%% dia of stirrups
+# name: dia_stirrups
+# type: scalar
+8
+
+%% Enter the dia of bars for stirrups
+# name: dia_of_stirrups
+# type: scalar
+10
+
+%% Enter the number the legged stirrups
+# name: no_of_legged
+# type: scalar
+8
+
+%% Percentage of steel in shear reinforcement for diagonal tension for underreinforced section
+# name: pt
+# type: scalar
+0.23
+
+%% Percentage of steel in shear reinforcement for diagonal tension between Column A and Column B
+# name: pt_1
+# type: scalar
+0.79

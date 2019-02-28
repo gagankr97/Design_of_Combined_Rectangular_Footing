@@ -43,6 +43,10 @@
 # type: scalar
 20
 
+# name: Fck_for_column
+# type: scalar
+25
+
 %% Fy in N/mm^2
 # name: Fy
 # type: scalar

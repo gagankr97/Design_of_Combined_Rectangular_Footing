@@ -37,6 +37,10 @@ Length_of_Shorter_Side_of_Footing = (Provided_Area_of_Footing/Length_of_Longer_S
 printf("Length_of_Shorter_Side_of_Footing = %d m \n", Length_of_Shorter_Side_of_Footing)
 disp("\n")
 
+Center_to_Center_spacing_of_Column = Center_to_Center_spacing_of_Column;
+printf("Center_to_Center_spacing_of_Columns = %d m \n", Center_to_Center_spacing_of_Column)
+
+
 xbar = round((Load_on_Column_B*Center_to_Center_spacing_of_Column)/(Load_on_Column_A+Load_on_Column_B));
 Dist_btw_Side_of_the_footing_to_center_of_column_A = (((Length_of_Longer_Side_of_Footing)/2)-xbar);
 printf("Dist_btw_Side_of_the_footing_to_center_of_column_A = %d m \n", Dist_btw_Side_of_the_footing_to_center_of_column_A)
@@ -96,7 +100,12 @@ printf("Shear_Force_at_Second_Point_of_Contraflexure = %d KN \n", Shear_Force_at
 disp("\n")
 
 % Effective Depth from Bending Compression
-Effective_Depth = round((sqrt((1.5*Maximum_Bending_Moment*1000000)/(2.761*Length_of_Shorter_Side_of_Footing*1000)))/100)*100;
+
+xu_max_by_d = (700)/(1100+0.87*Fy);
+Ru = (0.36*Fck*xu_max_by_d*(1-0.416*xu_max_by_d));
+
+
+Effective_Depth = round((sqrt((1.5*Maximum_Bending_Moment*1000000)/(Ru*Length_of_Shorter_Side_of_Footing*1000)))/100)*100;
 printf("Effective_Depth = %d mm \n", Effective_Depth)
 %Check for punching shear
 Width_of_critical_plane = (Width1_of_Column_A+Width1_of_Column_B);
@@ -332,7 +341,7 @@ printf("Moment = %d KNm \n", Moment1)
 Factored_Moment1 = 1.5*Moment1;
 printf("Factored_Moment = %d KNm \n", Factored_Moment1)
 
-depth_1 = sqrt((Factored_Moment1*1000000)/(2.761*1000));
+depth_1 = sqrt((Factored_Moment1*1000000)/(Ru*1000));
 Eff_dep_1  = Required_Effective_Depth - dia_12;
 Transverse_Ast1 = (((0.5*Fck)/Fy)*(1-sqrt(1-(4.6*Factored_Moment1*1000000)/(Fck*1000*(Eff_dep_1*Eff_dep_1)))))*1000*Eff_dep_1;
 printf("Area_of_Steel = %d mm^2 \n", Transverse_Ast1)
@@ -340,7 +349,7 @@ Area_of_1_bar = ceil((pi/4)*(dia_12*dia_12));
 printf("Area_of_one_bar = %d mm^2 \n", Area_of_1_bar)
 Spacing_1 =  ceil((1000*Area_of_1_bar)/(Transverse_Ast1));
 printf("Spacing_btw_bars = %d mm c/c \n", Spacing_1)
-tbd = interp1 (table(:,1),table(:,2),Fck);
+tbd = interp1 (table(:,1),table(:,2),Fck_for_column);
 Development_Lenght_1 = (Fy*dia_12)/(4*tbd*1.6);
 
 printf("Development_Lenght = %d mm \n", Development_Lenght_1 )
@@ -374,7 +383,7 @@ Area_of_1_bar = ceil((pi/4)*(dia_12*dia_12));
 printf("Area_of_one_bar = %d mm^2 \n", Area_of_1_bar)
 Spacing_2 =  ceil((1000*Area_of_1_bar)/(Transverse_Ast2));
 printf("Spacing_btw_bars = %d mm c/c \n", Spacing_2)
-tbd = interp1 (table(:,1),table(:,2),Fck);
+tbd = interp1 (table(:,1),table(:,2),Fck_for_column);
 Development_Lenght_2 = (Fy*dia_12)/(4*tbd*1.6);
 
 printf("Development_Lenght = %d mm \n", Development_Lenght_2)

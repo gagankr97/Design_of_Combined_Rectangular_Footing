@@ -1,12 +1,12 @@
 %% Width1_of_Column_A in m
 # name: Width1_of_Column_A
 # type: scalar
-0.300
+.400
 
 %% Width2_of_Column_A in m
 # name: Width2_of_Column_A
 # type: scalar
-0.300
+0.400
 
 %% Width1_of_Column_B in m
 # name: Width1_of_Column_B
@@ -21,12 +21,12 @@
 %% Load_on_Column_A in KN 
 # name: Load_on_Column_A
 # type: scalar
-500
+1150
 
 %% Load_on_Column_B in KN
 # name: Load_on_Column_B
 # type: scalar
-700
+1850
 
 %% Assume the Self Weight of the Footing
 # name: Self_Weight
@@ -36,7 +36,7 @@
 %% Center_to_Center_spacing_of_Column in m
 # name: Center_to_Center_spacing_of_Column
 # type: scalar
-3.4
+4.5
 
 %% Fck in N/mm^2
 # name: Fck
@@ -52,10 +52,10 @@
 # type: scalar
 415
 
-%% Soil_Pressure in N/m^2
+%% Soil_Pressure in kN/m^2
 # name: Soil_Pressure
 # type: scalar
-150
+145
 
 %% Clear_Cover in mm
 # name: Clear_Cover
